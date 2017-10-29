@@ -38,7 +38,7 @@ public class Zadanie_6 {
             }
             statistics.put(word, ++count);
         }
-        System.out.println(statistics);
+        System.out.println("Статистика по словам " + statistics);
 
         int maxValueInMap = (Collections.max(statistics.values()));  // This will return max value in the Hashmap
         for (Map.Entry<String, Integer> entry : statistics.entrySet()) {  // Itrate through hashmap
