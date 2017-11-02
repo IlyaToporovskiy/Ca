@@ -1,5 +1,6 @@
 package zadanie_7;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculate {
@@ -11,32 +12,55 @@ public class Calculate {
      * @see #delenie
      * @see #umnogenie
      */
-    double num1, num2, resultat;
+    public double num1, num2, resultat;
+    boolean dobro = true;
+    boolean dobro2 = true;
 
-    public void getUserInput()  {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Введи первое число ");
-        num1 = input.nextDouble();
-
-        System.out.println("введи второе число ");
-        num2 = input.nextDouble();
-
+    public void getUserInput() {
+        while (dobro) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Введи первое число ");
+            try {
+                num1 = input.nextDouble();
+                dobro = false;
+            } catch (InputMismatchException e) {
+                System.err.println("Первое число неправильно " + e);
+            }
+        }
+        while(dobro2){
+            try {
+                System.out.println("введи второе число ");
+                Scanner input = new Scanner(System.in);
+                num2 = input.nextDouble();
+                dobro2 = false;
+            } catch (InputMismatchException e2) {
+                System.err.println("Второе число неправильно " + e2);
+            }
+        }
     }
 
     public void sum() {
         resultat = num1 + num2;
         System.out.println(resultat);
     }
-    public void minus(){
-        resultat = num1 -num2;
+
+    public void minus() {
+        resultat = num1 - num2;
         System.out.println(resultat);
     }
-    public void delenie(){
-        resultat = num1 /num2;
-        System.out.println(resultat);
+
+    public double getNum2() {
+        return num2;
     }
-    public void umnogenie(){
-        resultat = num1 *num2;
+
+    public void delenie() {
+            resultat = num1 / num2;
+            System.out.println(resultat);
+
+         }
+
+    public void umnogenie() {
+        resultat = num1 * num2;
         System.out.println(resultat);
     }
 }

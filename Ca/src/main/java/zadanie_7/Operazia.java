@@ -3,7 +3,7 @@ package zadanie_7;
 import java.util.Scanner;
 
 /**
- * @
+ * @author ILYA Toporovskiy
  */
 public class Operazia {
     String symbol;
