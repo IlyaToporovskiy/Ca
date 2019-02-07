@@ -4,6 +4,7 @@ import java.util.Scanner;
 /**
  * @author ILYA Toporovskiy
  * date 04.10.2017
+ *
  */
 
 public class Zadacha_2 {
